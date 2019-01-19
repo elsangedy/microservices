@@ -1,0 +1,17 @@
+endpoint: ${env:PRISMA}
+datamodel: datamodel.graphql
+
+databaseType: document
+
+# secret: mysecret
+
+generate:
+  - generator: typescript-client
+    output: ../src/prisma/
+
+hooks:
+  post-deploy:
+    - prisma generate
+
+seed:
+  import: seed.graphql

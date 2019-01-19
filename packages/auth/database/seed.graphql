@@ -1,0 +1,18 @@
+mutation {
+  createRole(
+    data: {
+      code: "master"
+      name: "Master"
+      description: "Access to all features"
+      users: {
+        create: {
+          name: "Master User"
+          email: "master@email.com"
+          password: "$2b$10$xYjE1UnfWqxgpwX5sCGtrOUXGXmHFW/8hh3Jv.vGCeNJ7Q7dKtU1y" # password: 1
+        }
+      }
+    }
+  ) {
+    id
+  }
+}

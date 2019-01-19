@@ -1,0 +1,76 @@
+{
+  "name": "@microservices/graphql",
+  "version": "1.0.0",
+  "author": {
+    "name": "Munir Ahmed Elsangedy",
+    "email": "elsangedy@gmail.com",
+    "url": "https://github.com/elsangedy"
+  },
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "start": "ts-node -r dotenv/config -r tsconfig-paths/register src/main.ts",
+    "start:dev": "nodemon --ext ts,graphql --watch src --exec \"yarn start\" --ignore src/**/*.spec.ts --ignore src/schema.ts",
+    "prestart:prod": "rimraf dist && tsc && cp src/schema.graphql dist/schema.graphql",
+    "start:prod": "node dist/main.js",
+    "lint": "tslint -p tsconfig.json -c tslint.json",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "dependencies": {
+    "@microservices/common": "^1.0.0",
+    "@nestjs/common": "^5.5.0",
+    "@nestjs/core": "^5.5.0",
+    "@nestjs/graphql": "^5.5.1",
+    "@nestjs/jwt": "^0.2.1",
+    "@nestjs/microservices": "^5.5.0",
+    "@nestjs/passport": "^5.1.0",
+    "amqp-connection-manager": "^2.3.0",
+    "amqplib": "^0.5.3",
+    "apollo-server-express": "^2.3.1",
+    "compression": "^1.7.3",
+    "dotenv": "^6.2.0",
+    "fastify": "^1.13.4",
+    "fastify-formbody": "^2.0.3",
+    "graphql": "^14.1.0",
+    "graphql-tools": "^4.0.3",
+    "helmet": "^3.15.0",
+    "jsonwebtoken": "^8.4.0",
+    "passport": "^0.4.0",
+    "passport-http-bearer": "^1.0.1",
+    "passport-jwt": "^4.0.0",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^6.3.3"
+  },
+  "devDependencies": {
+    "@nestjs/testing": "^5.5.0",
+    "@types/graphql": "^14.0.5",
+    "@types/jest": "^23.3.12",
+    "@types/jsonwebtoken": "^8.3.0",
+    "@types/node": "^10.12.18",
+    "jest": "^23.6.0",
+    "nodemon": "^1.18.9",
+    "rimraf": "^2.6.3",
+    "ts-jest": "^23.10.5",
+    "ts-loader": "^5.3.3",
+    "ts-node": "^7.0.1",
+    "tsconfig-paths": "^3.7.0",
+    "tslint": "^5.12.1",
+    "typescript": "^3.2.2"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".spec.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
+  }
+}

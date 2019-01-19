@@ -1,0 +1,33 @@
+{
+  "name": "@microservices-nestjs/core",
+  "version": "1.0.0",
+  "author": {
+    "name": "Munir Ahmed Elsangedy",
+    "email": "elsangedy@gmail.com",
+    "url": "https://github.com/elsangedy"
+  },
+  "private": true,
+  "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "cl": "lerna clean",
+    "bs": "lerna bootstrap",
+    "build": "lerna run build",
+    "lint": "lerna run lint",
+    "start": "lerna run start",
+    "start:dev": "lerna run start:dev",
+    "test": "lerna run test",
+    "test:coverage": "lerna run test:coverage"
+  },
+  "devDependencies": {
+    "husky": "^1.3.1",
+    "lerna": "^3.10.6"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint"
+    }
+  }
+}
