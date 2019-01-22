@@ -1,5 +1,7 @@
 # Microservices with NestJS
 
+[![Coverage Status](https://coveralls.io/repos/github/elsangedy/microservices/badge.svg)](https://coveralls.io/github/elsangedy/microservices)
+
 ## Install
 
 ```bash
