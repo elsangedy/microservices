@@ -1,18 +1,8 @@
 {
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
     "outDir": "./dist",
     "baseUrl": "./src",
-    "module": "commonjs",
-    "declaration": true,
-    "noImplicitAny": false,
-    "removeComments": true,
-    "noLib": false,
-    "allowSyntheticDefaultImports": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "target": "es6",
-    "sourceMap": true,
-    "lib": ["esnext", "dom", "esnext.asynciterable"]
   },
   "include": [
     "src/**/*"

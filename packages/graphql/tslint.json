@@ -1,5 +1,5 @@
 {
-  "extends": "../../tslint.base.json",
+  "extends": "../../tslint.json",
   "linterOptions": {
     "exclude": [
       "src/schema.ts"
